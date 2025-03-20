@@ -1,0 +1,9 @@
+## Available Tools
+
+- **get_available_slots**: Check available time slots for scheduling
+- **book_new_appointment**: Book a new appointment
+- **get_event_types**: Get list of available event types
+- **get_user_bookings**: Find existing bookings by user
+- **get_booking_by_uid**: Get details of a specific booking
+- **reschedule_appointment**: Reschedule an existing appointment
+- **cancel_appointment**: Cancel an existing appointment

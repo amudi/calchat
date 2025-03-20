@@ -1,0 +1,38 @@
+[project]
+name = "calchat"
+version = "0.1.0"
+description = "Cal.com chatbot API service"
+authors = [
+    {name = "Amudi"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "fastapi>=0.115.11,<0.116.0",
+    "uvicorn[standard]>=0.34.0,<0.35.0",
+    "sqlalchemy>=2.0.39,<3.0.0",
+    "pydantic>=2.10.6,<3.0.0",
+    "python-jose[cryptography]>=3.4.0,<4.0.0",
+    "passlib[bcrypt]>=1.7.4,<2.0.0",
+    "python-multipart>=0.0.18,<0.0.19",
+    "requests>=2.32.3,<3.0.0",
+    "chainlit>=2.4.201,<3.0.0",
+    "openai-agents>=0.0.5,<0.1.0",
+    "httpx>=0.28.1,<0.29.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "openai>=1.13.0,<2.0.0",
+    "langchain>=0.3.0,<0.4.0",
+    "langchain-core>=0.3.0,<0.4.0",
+    "langchain-openai>=0.3.0,<0.4.0",
+    "langchain-community>=0.3.0,<0.4.0",
+    "pytz>=2023.3,<2024.0"
+]
+
+[tool.poetry]
+packages = [
+    { include = "app" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
