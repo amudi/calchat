@@ -48,7 +48,13 @@ CalChat is an AI-powered chat interface for managing Cal.com calendars. It allow
    OPENAI_MODEL=gpt-4o-mini
    CAL_DOT_COM_API_KEY=your_cal_dot_com_api_key
    CAL_DOT_COM_USERNAME=your_cal_username
+   CHAINLIT_AUTH_SECRET=your_chainlit_auth_secret
    ```
+   You can run
+   ```bash
+   poetry run chainlit create-secret
+   ```
+   to generate `CHAINLIT_AUTH_SECRET`
 
 ### Running the Application
 
