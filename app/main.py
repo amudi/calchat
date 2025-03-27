@@ -36,39 +36,10 @@ async def root():
     """
     return {"message": "Welcome to CalChat API"}
 
-@app.post("/chat")
-async def chat(request: Request):
-    """
-    Chat endpoint that receives a message and returns a response.
-    
-    Args:
-        request: The request object containing the message and session_id
-        
-    Returns:
-        A streaming response with the chat response
-    """
-    # Parse the request
-    data = await request.json()
-    message = data.get("message", "")
-    session_id = data.get("session_id", "default")
-    
-    logger.info(f"Received message: '{message[:50]}...' with session_id: {session_id}")
-    
-    # Define the streaming function
-    async def stream_response():
-        async for response_chunk in generate_openai_stream(message, session_id, format_as_sse=True):
-            yield response_chunk
-    
-    # Return a streaming response
-    return StreamingResponse(
-        stream_response(),
-        media_type="text/event-stream"
-    )
-
 @app.post("/message")
 async def message(request: Request):
     """
-    Message endpoint for Chainlit frontend.
+    Message endpoint for frontend REST API clients.
     
     Args:
         request: The request object containing the content
@@ -81,7 +52,7 @@ async def message(request: Request):
     content = data.get("content", "")
     session_id = data.get("session_id", "default")
     
-    logger.info(f"Received message from Chainlit: '{content[:50]}...' with session_id: {session_id}")
+    logger.info(f"Received message: '{content[:50]}...' with session_id: {session_id}")
     
     # Define the streaming function
     async def stream_response():
@@ -97,7 +68,7 @@ async def message(request: Request):
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     """
-    WebSocket endpoint for real-time chat.
+    WebSocket endpoint for websocket clients.
     
     Args:
         websocket: The WebSocket connection
