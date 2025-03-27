@@ -69,15 +69,3 @@ CalChat is an AI-powered chat interface for managing Cal.com calendars. It allow
    ```
 
 4. Visit `http://localhost:8080/chainlit` in your browser to interact with the assistant. Login with any email / password since the app mocks out authentication.
-
-## License
-
-[MIT License](LICENSE)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-For support, please open an issue on the GitHub repository or contact the maintainer at your-email@example.com.
